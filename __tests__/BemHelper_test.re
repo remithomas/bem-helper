@@ -24,18 +24,32 @@ describe("BEM helper", () => {
     expect(myBemClassNames) |> toBe(expectedClassName);
   });
 
-  test("it should create classNames for block and modifier with truthly boolean state", () => {
+  test("it should create classNames for block and modifier with truthly boolean modifier", () => {
     let isActive = true;
-    let myBemClassNames = bem(~block="my-block", ~modifiers=[("active", isActive)], ());
+    let myBemClassNames = bem(~block="my-block", ~modifiers=[Boolean("active", isActive)], ());
     let expectedClassName = "my-block my-block--active";
 
     expect(myBemClassNames) |> toBe(expectedClassName);
   });
 
-  test("it should create classNames for block and modifier with falsy boolean state", () => {
+  test("it should create classNames for block and modifier with falsy boolean modifier", () => {
     let isActive = false;
-    let myBemClassNames = bem(~block="my-block", ~modifiers=[("active", isActive)], ());
+    let myBemClassNames = bem(~block="my-block", ~modifiers=[Boolean("active", isActive)], ());
     let expectedClassName = "my-block";
+
+    expect(myBemClassNames) |> toBe(expectedClassName);
+  });
+  
+  test("it should create classNames for block and modifier with string modifier", () => {
+    let myBemClassNames = bem(~block="my-block", ~modifiers=[String("big")], ());
+    let expectedClassName = "my-block my-block--big";
+
+    expect(myBemClassNames) |> toBe(expectedClassName);
+  });
+
+  test("it should create classNames for block and modifier with string modifier and boolean modifier", () => {
+    let myBemClassNames = bem(~block="my-block", ~modifiers=[String("big"), Boolean("active", true)], ());
+    let expectedClassName = "my-block my-block--big my-block--active";
 
     expect(myBemClassNames) |> toBe(expectedClassName);
   });

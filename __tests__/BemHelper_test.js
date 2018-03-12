@@ -2,6 +2,7 @@
 'use strict';
 
 var Jest = require("@glennsl/bs-jest/src/jest.js");
+var Block = require("bs-platform/lib/js/block.js");
 var BemHelper = require("../src/BemHelper.js");
 
 describe("BEM helper", (function () {
@@ -17,25 +18,45 @@ describe("BEM helper", (function () {
                 var myBemClassNames = BemHelper.bem(/* Some */["my-block"], /* Some */["element"], /* None */0, /* () */0);
                 return Jest.Expect[/* toBe */2]("my-block__element", Jest.Expect[/* expect */0](myBemClassNames));
               }));
-        Jest.test("it should create classNames for block and modifier with truthly boolean state", (function () {
+        Jest.test("it should create classNames for block and modifier with truthly boolean modifier", (function () {
                 var myBemClassNames = BemHelper.bem(/* Some */["my-block"], /* None */0, /* Some */[/* :: */[
-                        /* tuple */[
-                          "active",
-                          /* true */1
-                        ],
+                        /* Boolean */Block.__(1, [
+                            "active",
+                            /* true */1
+                          ]),
                         /* [] */0
                       ]], /* () */0);
                 return Jest.Expect[/* toBe */2]("my-block my-block--active", Jest.Expect[/* expect */0](myBemClassNames));
               }));
-        return Jest.test("it should create classNames for block and modifier with falsy boolean state", (function () {
+        Jest.test("it should create classNames for block and modifier with falsy boolean modifier", (function () {
+                var myBemClassNames = BemHelper.bem(/* Some */["my-block"], /* None */0, /* Some */[/* :: */[
+                        /* Boolean */Block.__(1, [
+                            "active",
+                            /* false */0
+                          ]),
+                        /* [] */0
+                      ]], /* () */0);
+                return Jest.Expect[/* toBe */2]("my-block", Jest.Expect[/* expect */0](myBemClassNames));
+              }));
+        Jest.test("it should create classNames for block and modifier with string modifier", (function () {
+                var myBemClassNames = BemHelper.bem(/* Some */["my-block"], /* None */0, /* Some */[/* :: */[
+                        /* String */Block.__(0, ["big"]),
+                        /* [] */0
+                      ]], /* () */0);
+                return Jest.Expect[/* toBe */2]("my-block my-block--big", Jest.Expect[/* expect */0](myBemClassNames));
+              }));
+        return Jest.test("it should create classNames for block and modifier with string modifier and boolean modifier", (function () {
                       var myBemClassNames = BemHelper.bem(/* Some */["my-block"], /* None */0, /* Some */[/* :: */[
-                              /* tuple */[
-                                "active",
-                                /* false */0
-                              ],
-                              /* [] */0
+                              /* String */Block.__(0, ["big"]),
+                              /* :: */[
+                                /* Boolean */Block.__(1, [
+                                    "active",
+                                    /* true */1
+                                  ]),
+                                /* [] */0
+                              ]
                             ]], /* () */0);
-                      return Jest.Expect[/* toBe */2]("my-block", Jest.Expect[/* expect */0](myBemClassNames));
+                      return Jest.Expect[/* toBe */2]("my-block my-block--big my-block--active", Jest.Expect[/* expect */0](myBemClassNames));
                     }));
       }));
 

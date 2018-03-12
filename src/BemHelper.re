@@ -1,6 +1,8 @@
+type modifier =
+  | String(string)
+  | Boolean(string, bool);
 
-type modifiersList = list((string, bool));
-
+type modifiersList = list(modifier);
 
 let join = (separator, strings) => {
   let rec run = (acc, strings) =>
@@ -15,12 +17,11 @@ let join = (separator, strings) => {
 
 let getModifierClassNames = (modifiers, base) => {
   List.map(item => {
-    let (modifier, value) = item;
-
-    switch value {
-    | true => base ++ "--" ++ modifier
-    | false => ""
-    }
+    switch item {
+    | String(modifier') => base ++ "--" ++ modifier'
+    | Boolean(modifier', true) => base ++ "--" ++ modifier'
+    | Boolean(_modifier', false) => ""
+    };
   }, modifiers);
 };
 

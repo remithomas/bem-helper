@@ -29,7 +29,7 @@ function join(separator, strings) {
                 Caml_builtin_exceptions.match_failure,
                 [
                   "BemHelper.re",
-                  7,
+                  9,
                   4
                 ]
               ];
@@ -45,10 +45,14 @@ function join(separator, strings) {
 
 function getModifierClassNames(modifiers, base) {
   return List.map((function (item) {
-                if (item[1] !== 0) {
-                  return base + ("--" + item[0]);
+                if (item.tag) {
+                  if (item[1] !== 0) {
+                    return base + ("--" + item[0]);
+                  } else {
+                    return "";
+                  }
                 } else {
-                  return "";
+                  return base + ("--" + item[0]);
                 }
               }), modifiers);
 }
