@@ -5,17 +5,37 @@ var Jest = require("@glennsl/bs-jest/src/jest.js");
 var BemHelper = require("../src/BemHelper.js");
 
 describe("BEM helper", (function () {
-        Jest.test("it should create a className with block", (function () {
-                var myBemClassNames = BemHelper.bem(/* Some */["my-block"], /* None */0, /* () */0);
+        Jest.test("it should create a className for block", (function () {
+                var myBemClassNames = BemHelper.bem(/* Some */["my-block"], /* None */0, /* None */0, /* () */0);
                 return Jest.Expect[/* toBe */2]("my-block", Jest.Expect[/* expect */0](myBemClassNames));
               }));
-        Jest.test("it should create a className with element", (function () {
-                var myBemClassNames = BemHelper.bem(/* None */0, /* Some */["my-element"], /* () */0);
+        Jest.test("it should create a className for element", (function () {
+                var myBemClassNames = BemHelper.bem(/* None */0, /* Some */["my-element"], /* None */0, /* () */0);
                 return Jest.Expect[/* toBe */2]("my-element", Jest.Expect[/* expect */0](myBemClassNames));
               }));
-        return Jest.test("it should create classNames with block and element", (function () {
-                      var myBemClassNames = BemHelper.bem(/* Some */["my-block"], /* Some */["element"], /* () */0);
-                      return Jest.Expect[/* toBe */2]("my-block__element", Jest.Expect[/* expect */0](myBemClassNames));
+        Jest.test("it should create classNames for block and element", (function () {
+                var myBemClassNames = BemHelper.bem(/* Some */["my-block"], /* Some */["element"], /* None */0, /* () */0);
+                return Jest.Expect[/* toBe */2]("my-block__element", Jest.Expect[/* expect */0](myBemClassNames));
+              }));
+        Jest.test("it should create classNames for block and modifier with truthly boolean state", (function () {
+                var myBemClassNames = BemHelper.bem(/* Some */["my-block"], /* None */0, /* Some */[/* :: */[
+                        /* tuple */[
+                          "active",
+                          /* true */1
+                        ],
+                        /* [] */0
+                      ]], /* () */0);
+                return Jest.Expect[/* toBe */2]("my-block my-block--active", Jest.Expect[/* expect */0](myBemClassNames));
+              }));
+        return Jest.test("it should create classNames for block and modifier with falsy boolean state", (function () {
+                      var myBemClassNames = BemHelper.bem(/* Some */["my-block"], /* None */0, /* Some */[/* :: */[
+                              /* tuple */[
+                                "active",
+                                /* false */0
+                              ],
+                              /* [] */0
+                            ]], /* () */0);
+                      return Jest.Expect[/* toBe */2]("my-block", Jest.Expect[/* expect */0](myBemClassNames));
                     }));
       }));
 

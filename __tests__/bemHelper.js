@@ -1,11 +1,11 @@
 var bem = require('../src/BemHelper.js').bem;
 
 describe('Utils: bemHelper', () => {
-  // it('should create my class', () => {
-  //   expect(bem()).toEqual('');
-  //   expect(bem("block")).toEqual('block');
-  //   expect(bem('block', 'element')).toEqual('element block__element');
-  // });
+  it('should create my class', () => {
+    // expect(bem()).toEqual('');
+    // expect(bem("block")).toEqual('block');
+    // expect(bem('block', 'element')).toEqual('element block__element');
+  });
 
   // it('should create my classes with boolean modifier', () => {
   //   expect(bem('first-class', {

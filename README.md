@@ -6,6 +6,12 @@ Work In Progress but still A simple BEM helper
 
 ## How to use
 
+```re
+/* Write my-block my-block--active */
+let active = true;
+let myBemClassNames = bem(~block="my-block", ~modifiers=[("active", active)], ());
+```
+
 ### ES6 import
 
 ### Commonjs
