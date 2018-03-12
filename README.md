@@ -8,8 +8,8 @@ Work In Progress but still A simple BEM helper
 
 ```re
 /* Write my-block my-block--active */
-let active = true;
-let myBemClassNames = bem(~block="my-block", ~modifiers=[("active", active)], ());
+let isActive = true;
+let myBemClassNames = bem(~block="my-block", ~modifiers=[Boolean("active", isActive)], ());
 ```
 
 ### ES6 import
@@ -22,5 +22,6 @@ let myBemClassNames = bem(~block="my-block", ~modifiers=[("active", active)], ()
 
 ## Todos
 
+- [ ] Add some examples
 - [ ] Typescript bindings
 - [ ] Flow bindings
