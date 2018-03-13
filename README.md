@@ -1,5 +1,7 @@
 # BEM Helper
 
+[![CircleCI](https://circleci.com/gh/remithomas/bem-helper.svg?style=svg)](https://circleci.com/gh/remithomas/bem-helper)
+
 Work In Progress but still A simple BEM helper
 
 ## How to install
