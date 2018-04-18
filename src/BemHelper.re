@@ -5,14 +5,7 @@ type modifier =
 type modifiersList = list(modifier);
 
 let join = (separator, strings) => {
-  let rec run = (acc, strings) =>
-    switch strings {
-    | [] => acc
-    | [x] => acc ++ x
-    | [x, ...xs] when List.hd(xs) !== "" => run(acc ++ x ++ separator, xs)
-    | [x, ...xs] when List.hd(xs) === "" => run(acc ++ x, xs)
-    };
-  run("", strings);
+  String.concat(separator, strings) |> String.trim;
 };
 
 let getModifierClassNames = (modifiers, base) => {
@@ -25,7 +18,12 @@ let getModifierClassNames = (modifiers, base) => {
   }, modifiers);
 };
 
-let bem = (~block: option(string)=?, ~element: option(string)=?, ~modifiers: option(modifiersList)=?, ()): string => {
+let bem = (
+  ~block: option(string)=?,
+  ~element: option(string)=?,
+  ~modifiers: option(modifiersList)=?,
+  ()
+): string => {
   let classNames = switch (block, element, modifiers) {
   | (None, Some(element'), Some(modifiers'))
     => element' 

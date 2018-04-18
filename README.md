@@ -6,6 +6,8 @@ Work In Progress but still A simple BEM helper
 
 ## How to install
 
+`...`
+
 ## How to use
 
 ```re
@@ -14,16 +16,15 @@ let isActive = true;
 let myBemClassNames = bem(~block="my-block", ~modifiers=[Boolean("active", isActive)], ());
 ```
 
-### ES6 import
+## Examples
 
-### Commonjs
-
-### ReasonMl
+See usage examples in [examples folder](./examples):
 
 ## How to contribute
 
+Please feel free to write an issue/PR if you see/want somethings.
+
 ## Todos
 
-- [ ] Add some examples
-- [ ] Typescript bindings
-- [ ] Flow bindings
+- [X] Add some examples
+- [ ] How to install

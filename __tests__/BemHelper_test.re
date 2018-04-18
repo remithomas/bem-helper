@@ -53,4 +53,11 @@ describe("BEM helper", () => {
 
     expect(myBemClassNames) |> toBe(expectedClassName);
   });
+
+  test("it should create classNames for block element and modifier with string modifier and boolean modifier", () => {
+    let myBemClassNames = bem(~block="my-block", ~element="element", ~modifiers=[String("big"), Boolean("active", true)], ());
+    let expectedClassName = "my-block__element my-block__element--big my-block__element--active";
+
+    expect(myBemClassNames) |> toBe(expectedClassName);
+  });
 });
