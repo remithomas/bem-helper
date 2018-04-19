@@ -1,6 +1,6 @@
-# reBEM Helper
+# reBEM Helper [![CircleCI](https://circleci.com/gh/remithomas/rebem-helper.svg?style=svg)](https://circleci.com/gh/remithomas/rebem-helper)
 
-[![CircleCI](https://circleci.com/gh/remithomas/rebem-helper.svg?style=svg)](https://circleci.com/gh/remithomas/rebem-helper) [![npm version](https://img.shields.io/npm/v/rebem-helper.svg?style=flat-square)](https://www.npmjs.com/package/rebem-helper)
+[![npm version](https://img.shields.io/npm/v/rebem-helper.svg?style=flat-square)](https://www.npmjs.com/package/rebem-helper)
 
 > A simple BEM helper using `ReasonMl`
 
@@ -28,7 +28,7 @@ yarn start
 
 ## How to use
 
-```re
+```reason
 open ReBemHelper;
 
 /* Write my-block my-block--active */
