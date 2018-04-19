@@ -10,9 +10,8 @@ jobs:
         steps:
             - checkout
 
-            - run: yarn global add bs-platform
+            # - run: yarn global add bs-platform
 
-            # Client build
             # Download and cache dependencies
             - restore_cache:
                 keys:
@@ -24,5 +23,6 @@ jobs:
                 paths:
                     - ./node_modules
                 key: v1-dependencies-{{ checksum "package.json" }}
+            - run: yarn run clean
             - run: yarn run build
             - run: yarn test
