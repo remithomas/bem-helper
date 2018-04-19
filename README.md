@@ -1,12 +1,20 @@
 # reBEM Helper
 
-[![CircleCI](https://circleci.com/gh/remithomas/bem-helper.svg?style=svg)](https://circleci.com/gh/remithomas/bem-helper)
+[![CircleCI](https://circleci.com/gh/remithomas/rebem-helper.svg?style=svg)](https://circleci.com/gh/remithomas/rebem-helper)
 
-Work In Progress but still A simple BEM helper
+> A simple BEM helper using `ReasonMl`
 
 ## How to install
 
-`...`
+```bash
+npm install rebem-helper
+```
+
+or
+
+```bash
+yarn add rebem-helper
+```
 
 ## Development
 

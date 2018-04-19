@@ -1,6 +1,6 @@
 {
   "name": "rebem-helper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple BEM helper with ReasonMl",
   "main": "index.js",
   "repository": "https://github.com/remithomas/rebem-helper.git",
@@ -11,6 +11,9 @@
     "build": "bsb -make-world",
     "clean": "bsb -clean-world",
     "test": "jest --coverage"
+  },
+  "bugs": {
+    "url": "https://github.com/remithomas/rebem-helper/issues"
   },
   "devDependencies": {
     "@glennsl/bs-jest": "^0.4.2",
