@@ -41,4 +41,4 @@ Please feel free to write an issue/PR if you see/want somethings.
 ## Todos
 
 - [X] Add some examples
-- [ ] How to install
+- [X] How to install
