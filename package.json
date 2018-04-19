@@ -2,13 +2,23 @@
   "name": "rebem-helper",
   "version": "1.0.3",
   "description": "Simple BEM helper with ReasonMl",
-  "repository": "https://github.com/remithomas/rebem-helper.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/remithomas/rebem-helper.git"
+  },
   "author": "remithomas",
   "license": "MIT",
   "homepage": "https://github.com/remithomas/rebem-helper#readme",
   "keywords": [
     "bem",
-    "CSS"
+    "css",
+    "helper",
+    "reason",
+    "reasonml"
+  ],
+  "files": [
+    "src/",
+    "bsconfig.json"
   ],
   "scripts": {
     "start": "bsb -make-world -w",
@@ -20,11 +30,11 @@
     "url": "https://github.com/remithomas/rebem-helper/issues"
   },
   "peerDependencies": {
-    "bs-platform": "^2.2.2"
+    "bs-platform": "^3.0.0"
   },
   "devDependencies": {
     "@glennsl/bs-jest": "^0.4.2",
-    "bs-platform": "^2.2.2",
+    "bs-platform": "^3.0.0",
     "jest": "^22.4.2"
   }
 }
