@@ -6,6 +6,8 @@
 
 ## How to install
 
+1. Install `reBEM Helper`
+
 ```bash
 npm install rebem-helper
 ```
@@ -15,6 +17,8 @@ or
 ```bash
 yarn add rebem-helper
 ```
+
+2. Add `rebem-helper` to "bs-dependencies" section of bsconfig.json
 
 ## Development
 

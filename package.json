@@ -4,8 +4,9 @@
   "description": "Simple BEM helper with ReasonMl",
   "main": "index.js",
   "repository": "https://github.com/remithomas/rebem-helper.git",
-  "author": "Remi THOMAS <remi.thomas@yahoo.fr>",
+  "author": "remithomas",
   "license": "MIT",
+  "homepage": "https://github.com/remithomas/rebem-helper#readme",
   "scripts": {
     "start": "bsb -make-world -w",
     "build": "bsb -make-world",
