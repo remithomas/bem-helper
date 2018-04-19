@@ -5,7 +5,7 @@
     "bs-dev-dependencies": [
         "@glennsl/bs-jest"
     ],
-    "bsc-flags": ["-bs-gen-tds"],
+    "bsc-flags": ["-bs-no-version-header", "-bs-super-errors"],
     "sources": [
         {
             "dir" : "src",
