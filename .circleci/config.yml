@@ -5,7 +5,7 @@ jobs:
         docker:
             - image: circleci/node:8.9.4
 
-        working_directory: ~/bem-helper
+        working_directory: ~/rebem-helper
 
         steps:
             - checkout

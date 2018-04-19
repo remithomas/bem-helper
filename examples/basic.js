@@ -2,9 +2,9 @@
 'use strict';
 
 var Block = require("bs-platform/lib/js/block.js");
-var BemHelper = require("../src/BemHelper.js");
+var ReBemHelper = require("../src/ReBemHelper.js");
 
-var myActiveBemClassNames = BemHelper.bem(/* Some */["my-block"], /* None */0, /* Some */[/* :: */[
+var myActiveBemClassNames = ReBemHelper.bem(/* Some */["my-block"], /* None */0, /* Some */[/* :: */[
         /* Boolean */Block.__(1, [
             "active",
             /* true */1
@@ -12,12 +12,12 @@ var myActiveBemClassNames = BemHelper.bem(/* Some */["my-block"], /* None */0, /
         /* [] */0
       ]], /* () */0);
 
-BemHelper.bem(/* Some */["my-block"], /* None */0, /* Some */[/* :: */[
+ReBemHelper.bem(/* Some */["my-block"], /* None */0, /* Some */[/* :: */[
         /* String */Block.__(0, ["small"]),
         /* [] */0
       ]], /* () */0);
 
-BemHelper.bem(/* Some */["my-block"], /* None */0, /* Some */[/* :: */[
+ReBemHelper.bem(/* Some */["my-block"], /* None */0, /* Some */[/* :: */[
         /* String */Block.__(0, ["small"]),
         /* :: */[
           /* Boolean */Block.__(1, [
@@ -28,7 +28,7 @@ BemHelper.bem(/* Some */["my-block"], /* None */0, /* Some */[/* :: */[
         ]
       ]], /* () */0);
 
-var mySizeBemClassNames = BemHelper.bem(/* Some */["my-block"], /* Some */["element"], /* Some */[/* :: */[
+var mySizeBemClassNames = ReBemHelper.bem(/* Some */["my-block"], /* Some */["element"], /* Some */[/* :: */[
         /* String */Block.__(0, ["small"]),
         /* [] */0
       ]], /* () */0);

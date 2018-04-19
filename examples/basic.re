@@ -1,4 +1,4 @@
-open BemHelper;
+open ReBemHelper;
 
 /* Write class names: my-block my-block--active */
 let isActive = true;

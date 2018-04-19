@@ -1,6 +1,6 @@
 open Jest;
 open Expect;
-open BemHelper;
+open ReBemHelper;
 
 describe("BEM helper", () => {
   test("it should create a className for block", () => {

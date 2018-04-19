@@ -1,9 +1,9 @@
 {
-  "name": "bem-helper",
+  "name": "rebem-helper",
   "version": "1.0.0",
-  "description": "Simple BEM helper",
+  "description": "Simple BEM helper with ReasonMl",
   "main": "index.js",
-  "repository": "https://github.com/remithomas/bem-helper.git",
+  "repository": "https://github.com/remithomas/rebem-helper.git",
   "author": "Remi THOMAS <remi.thomas@yahoo.fr>",
   "license": "MIT",
   "scripts": {
