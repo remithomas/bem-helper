@@ -43,8 +43,3 @@ See usage examples in [examples folder](./examples):
 ## How to contribute
 
 Please feel free to write an issue/PR if you see/want somethings.
-
-## Todos
-
-- [X] Add some examples
-- [X] How to install
