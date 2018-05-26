@@ -31,12 +31,12 @@
     "url": "https://github.com/remithomas/rebem-helper/issues"
   },
   "peerDependencies": {
-    "bs-platform": "^3.0.0"
+    "bs-platform": "^3.1.4"
   },
   "devDependencies": {
     "@glennsl/bs-jest": "^0.4.2",
     "bs-platform": "^3.0.0",
     "coveralls": "^3.0.1",
-    "jest": "^22.4.2"
+    "jest": "^23.0.0"
   }
 }
