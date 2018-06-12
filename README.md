@@ -37,6 +37,32 @@ open ReBemHelper;
 let mySizeBemClassNames = bem(~block="my-block", ~modifiers=[String("small")], ());
 ```
 
+```reason
+open ReBemHelper;
+/* Write class names: my-block my-block--active my-block--small my-block--disable */
+let mySizeBemClassNames = bem(
+  ~block="my-block",
+  ~modifiers=[
+    String("small"),
+    Boolean("active", isActive),
+    Switch("enable", "disable", false)
+  ],
+  ()
+);
+```
+
+```reason
+open ReBemHelper;
+/* Write class names: my-block__element my-block__element--small some-other-class */
+let mySizeBemClassNames = bem(~block="my-block", ~element="element", ~modifiers=[String("small")], ~others="some-other-class", ());
+```
+
+### Modifier list
+
+- `String(modifierName)` String(string)
+- `Boolean(modifierName, shouldShowModifierName)` Boolean(string, bool)
+- `Switch(activeModifierName, unactiveModifierName, isActiveModifierName)` Switch(string, string, bool)
+
 ## Examples
 
 See more examples in [examples folder](./examples):
@@ -54,6 +80,12 @@ Run tests
 
 ```bash
 yarn test
+```
+
+Run tests (on watch)
+
+```bash
+yarn test:dev
 ```
 
 ## How to contribute

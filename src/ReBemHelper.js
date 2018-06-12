@@ -3,25 +3,30 @@
 var List = require("bs-platform/lib/js/list.js");
 var $$String = require("bs-platform/lib/js/string.js");
 
-function join(separator, strings) {
-  return $$String.trim($$String.concat(separator, strings));
-}
-
 function getModifierClassNames(modifiers, base) {
   return List.map((function (item) {
-                if (item.tag) {
-                  if (item[1]) {
-                    return base + ("--" + item[0]);
-                  } else {
-                    return "";
-                  }
-                } else {
-                  return base + ("--" + item[0]);
+                switch (item.tag | 0) {
+                  case 0 : 
+                      return base + ("--" + item[0]);
+                  case 1 : 
+                      if (item[1]) {
+                        return base + ("--" + item[0]);
+                      } else {
+                        return "";
+                      }
+                  case 2 : 
+                      if (item[2]) {
+                        return base + ("--" + item[0]);
+                      } else {
+                        return base + ("--" + item[1]);
+                      }
+                  
                 }
               }), modifiers);
 }
 
-function bem(block, element, modifiers, _) {
+function bem(block, element, modifiers, $staropt$star, _) {
+  var others = $staropt$star ? $staropt$star[0] : "";
   var classNames;
   if (block) {
     var block$prime = block[0];
@@ -60,13 +65,15 @@ function bem(block, element, modifiers, _) {
   } else {
     classNames = /* [] */0;
   }
-  return $$String.trim($$String.concat(" ", classNames));
+  var bemClasses = List.append(classNames, /* :: */[
+        others,
+        /* [] */0
+      ]);
+  return $$String.trim($$String.concat(" ", bemClasses));
 }
 
 var $$default = bem;
 
-exports.join = join;
-exports.getModifierClassNames = getModifierClassNames;
 exports.bem = bem;
 exports.$$default = $$default;
 exports.default = $$default;

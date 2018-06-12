@@ -9,12 +9,12 @@ var myActiveBemClassNames = ReBemHelper.bem(/* Some */["my-block"], /* None */0,
             true
           ]),
         /* [] */0
-      ]], /* () */0);
+      ]], /* None */0, /* () */0);
 
 ReBemHelper.bem(/* Some */["my-block"], /* None */0, /* Some */[/* :: */[
         /* String */Block.__(0, ["small"]),
         /* [] */0
-      ]], /* () */0);
+      ]], /* None */0, /* () */0);
 
 ReBemHelper.bem(/* Some */["my-block"], /* None */0, /* Some */[/* :: */[
         /* String */Block.__(0, ["small"]),
@@ -25,12 +25,35 @@ ReBemHelper.bem(/* Some */["my-block"], /* None */0, /* Some */[/* :: */[
             ]),
           /* [] */0
         ]
-      ]], /* () */0);
+      ]], /* None */0, /* () */0);
+
+ReBemHelper.bem(/* Some */["my-block"], /* Some */["element"], /* Some */[/* :: */[
+        /* String */Block.__(0, ["small"]),
+        /* [] */0
+      ]], /* None */0, /* () */0);
+
+ReBemHelper.bem(/* Some */["my-block"], /* None */0, /* Some */[/* :: */[
+        /* String */Block.__(0, ["small"]),
+        /* :: */[
+          /* Boolean */Block.__(1, [
+              "active",
+              true
+            ]),
+          /* :: */[
+            /* Switch */Block.__(2, [
+                "enable",
+                "disable",
+                false
+              ]),
+            /* [] */0
+          ]
+        ]
+      ]], /* None */0, /* () */0);
 
 var mySizeBemClassNames = ReBemHelper.bem(/* Some */["my-block"], /* Some */["element"], /* Some */[/* :: */[
         /* String */Block.__(0, ["small"]),
         /* [] */0
-      ]], /* () */0);
+      ]], /* Some */["some-other-class"], /* () */0);
 
 var isActive = true;
 

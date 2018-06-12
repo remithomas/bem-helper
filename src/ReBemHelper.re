@@ -1,6 +1,7 @@
 type modifier =
   | String(string)
-  | Boolean(string, bool);
+  | Boolean(string, bool)
+  | Switch(string, string, bool);
 
 type modifiersList = list(modifier);
 
@@ -14,6 +15,8 @@ let getModifierClassNames = (modifiers, base) => {
     | String(modifier') => base ++ "--" ++ modifier'
     | Boolean(modifier', true) => base ++ "--" ++ modifier'
     | Boolean(_modifier', false) => ""
+    | Switch(active, _inactive, true) => base ++ "--" ++ active
+    | Switch(_active, inactive, false) => base ++ "--" ++ inactive
     };
   }, modifiers);
 };
@@ -22,6 +25,7 @@ let bem = (
   ~block: option(string)=?,
   ~element: option(string)=?,
   ~modifiers: option(modifiersList)=?,
+  ~others = "",
   ()
 ): string => {
   let classNames = switch (block, element, modifiers) {
@@ -44,7 +48,9 @@ let bem = (
   | (None, None, None) => []
   };
 
-  join(" ", classNames);
+  let bemClasses = List.append(classNames, [others]);
+
+  join(" ", bemClasses);
 };
 
 let default = bem;

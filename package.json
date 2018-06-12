@@ -25,13 +25,14 @@
     "build": "bsb -make-world",
     "clean": "bsb -clean-world",
     "test": "jest --coverage",
+    "test:dev": "jest --watchAll",
     "coverage": "jest --coverage && cat ./coverage/lcov.info | coveralls"
   },
   "bugs": {
     "url": "https://github.com/remithomas/rebem-helper/issues"
   },
   "peerDependencies": {
-    "bs-platform": "^3.1.4"
+    "bs-platform": "^3.1.5"
   },
   "devDependencies": {
     "@glennsl/bs-jest": "^0.4.2",
