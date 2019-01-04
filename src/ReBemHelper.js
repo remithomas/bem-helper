@@ -25,19 +25,19 @@ function getModifierClassNames(modifiers, base) {
               }), modifiers);
 }
 
-function bem(block, element, modifiers, $staropt$star, _) {
-  var others = $staropt$star ? $staropt$star[0] : "";
+function bem(block, element, modifiers, $staropt$star, param) {
+  var others = $staropt$star !== undefined ? $staropt$star : "";
   var classNames;
-  if (block) {
-    var block$prime = block[0];
-    if (element) {
-      var element$prime = element[0];
-      if (modifiers) {
+  if (block !== undefined) {
+    var block$prime = block;
+    if (element !== undefined) {
+      var element$prime = element;
+      if (modifiers !== undefined) {
         var className = block$prime + ("__" + element$prime);
         classNames = List.append(/* :: */[
               className,
               /* [] */0
-            ], getModifierClassNames(modifiers[0], className));
+            ], getModifierClassNames(modifiers, className));
       } else {
         classNames = /* :: */[
           block$prime + ("__" + element$prime),
@@ -45,20 +45,20 @@ function bem(block, element, modifiers, $staropt$star, _) {
         ];
       }
     } else {
-      classNames = modifiers ? List.append(/* :: */[
+      classNames = modifiers !== undefined ? List.append(/* :: */[
               block$prime,
               /* [] */0
-            ], getModifierClassNames(modifiers[0], block$prime)) : /* :: */[
+            ], getModifierClassNames(modifiers, block$prime)) : /* :: */[
           block$prime,
           /* [] */0
         ];
     }
-  } else if (element) {
-    var element$prime$1 = element[0];
-    classNames = modifiers ? List.append(/* :: */[
+  } else if (element !== undefined) {
+    var element$prime$1 = element;
+    classNames = modifiers !== undefined ? List.append(/* :: */[
             element$prime$1,
             /* [] */0
-          ], getModifierClassNames(modifiers[0], element$prime$1)) : /* :: */[
+          ], getModifierClassNames(modifiers, element$prime$1)) : /* :: */[
         element$prime$1,
         /* [] */0
       ];
