@@ -25,6 +25,7 @@
     "start": "bsb -make-world -w",
     "build": "bsb -make-world",
     "clean": "bsb -clean-world",
+    "pretest": "npm run build",
     "test": "jest --coverage",
     "test:dev": "jest --watchAll",
     "coverage": "jest --coverage && cat ./coverage/lcov.info | coveralls"
